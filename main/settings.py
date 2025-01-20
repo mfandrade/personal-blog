@@ -20,12 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-go!ev&*im^8d4v96*695)4ilfj%8vi%w9!=w=u1l!xq0gj!k+n"
+SECRET_KEY = "django-insecure-go!ev&*im^8d4v96*695)4ilfj%8vi%w9!=w=u1l!xq0gj!k+m"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "*",
+]
 
 
 # Application definition
@@ -83,7 +87,7 @@ DATABASES = {
         "USER": "postgres",
         "PASSWORD": "postgres",
         "HOST": "db",
-        "PORT": "5433",
+        "PORT": "5432",
     },
     "local": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -127,6 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = "/app/staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
