@@ -1,5 +1,8 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from blog.models import Post, Comment
+
+from blog.forms import CommentForm
+from blog.models import Comment, Post
 
 
 def post_index(request):
@@ -26,10 +29,23 @@ def post_category(request, category):
 
 def post_detail(request, pk):
     post = Post.objects.get(pk=pk)
+    form = CommentForm()
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = Comment(
+                author=form.cleaned_data["author"],
+                body=form.cleaned_data["body"],
+                post=post,
+            )
+            comment.save()
+            return HttpResponseRedirect(request.path_info)
+
     comments = Comment.objects.filter(post=post)
     context = {
         "post": post,
         "comments": comments,
+        "form": CommentForm(),
     }
 
     return render(request, "post/detail.html", context)
