@@ -9,6 +9,23 @@ como referência também para estudo de Python e Django.
 
 ![Tela inicial](screenshot.png)
 
+# TL;DR
+
+1. Clone
+
+```bash
+git clone https://github.com/mfandrade/personal-blog
+```
+
+2. Execute
+
+```bash
+cd personal-blog
+make
+
+3. Acesse-o em http://localhost:8000
+```
+
 ## Pré-requisitos
 
 - Python
@@ -17,20 +34,20 @@ como referência também para estudo de Python e Django.
 - Git
 - Make
 
-## Executando
+## Deploy
 
 ```bash
 # Clone
 git clone https://github.com/mfandrade/personal-blog
 cd personal-blog
+
 # Selecione a versão
 git checkout v1.0.0
+
 # Execute
 docker compose up --build --remove-orphans
-# Acesse
-if test -f .env.local; then
-  www-browser http://localhost:8000
-fi
+
+echo '[INFO] Aplicação disponível em http://localhost:8000'
 ```
 
 ## Configuração de DB
