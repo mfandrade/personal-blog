@@ -6,6 +6,11 @@
 #
 # make
 
+if [ -d .git/ ]; then
+  echo '[INFO] Você já clonou o repositório git.  Para executar o personal-blog em desenvolvimento, digite apenas "make"'
+  exit 1
+fi
+
 # Clone
 git clone https://github.com/mfandrade/personal-blog
 cd personal-blog
