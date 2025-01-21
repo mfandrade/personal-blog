@@ -16,4 +16,4 @@ git checkout v1.0.0
 # Execute
 docker compose up --build --remove-orphans
 
-echo '[INFO] Aplicação disponível em http://localhost:8080'
+echo '[INFO] Aplicação disponível em http://localhost:8000'
