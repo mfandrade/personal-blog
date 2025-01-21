@@ -9,37 +9,29 @@ como referência também para estudo de Python e Django.
 
 ![Tela inicial](screenshot.png)
 
-# TOC
-
-<!--toc:start-->
-
-- [Pré-requisitos](#pré-requisitos)
-- [Executando](#executando)
-<!--toc:end-->
-
 ## Pré-requisitos
 
 - Python
 - Django
 - Docker
+- Git
 - Make
 
 ## Executando
 
-1. Clone este repositório
-
 ```bash
+# Clone
 git clone https://github.com/mfandrade/personal-blog
-```
-
-2. Execute-o localmente
-
-```bash
 cd personal-blog
-make
+# Selecione a versão
+git checkout v1.0.0
+# Execute
+docker compose up --build --remove-orphans
+# Acesse
+if test -f .env.local; then
+  www-browser http://localhost:8000
+fi
 ```
-
-3. Acesse a aplicação no endereço <http://localhost:8080>
 
 ## Configuração de DB
 
@@ -54,3 +46,7 @@ de acordo.
 
 **ATENÇÃO!** Este arquivo `.env`, por conter credenciais de acesso a dados
 de produção é ignorado pelo git e não deve ser incluído no controle de versão.
+
+```
+
+```
