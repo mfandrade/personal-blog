@@ -16,7 +16,7 @@ git clone https://github.com/mfandrade/personal-blog
 cd personal-blog
 
 # Selecione a versão
-git checkout v1.0.0
+git checkout v1.1.0
 
 # Execute
 docker compose up --build --remove-orphans
